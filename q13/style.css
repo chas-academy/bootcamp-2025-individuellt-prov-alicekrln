@@ -1,3 +1,10 @@
+    /* <!-- använd flex för att lägga alla children till container sida vid sida
+        - använd rätt flexbox property för att skapa mellanrum mellan boxarna
+        - lägg dem i mitten på y-axeln (vertikalt)
+        - alla boxar ska ta upp hela sidans bredd (exklusive padding och andra mellanrum)
+        - boxarna ska inte ta upp mer height än vad dess innehåll och padding kräver
+        - .other-box ska vara dubbelt så bred som .box --> */
+
 * {
   margin: 0;
   padding: 0;
@@ -5,13 +12,25 @@
 }
 
 .container {
+  display: flex;
   min-height: 100vh;
   padding: 2rem;
-  display: flex;
   background-color: #fff5ec;
+  align-items: center;
+  text-align: center;
 }
 
 .box {
+  display: flex;
   padding: 0.5rem;
   background-color: #ffd5c2;
+  flex: 1;
+  width:fit-content;
+  height: fit-content;
+  justify-content: space-around;
 }
+
+.other-box {
+  flex: 2;
+}
+

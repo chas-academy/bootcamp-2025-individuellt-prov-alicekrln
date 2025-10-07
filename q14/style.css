@@ -1,3 +1,12 @@
+    /* <!-- använd grid för att lägga alla children i ett rutmönster
+        - skapa en grid med 3 kolumner
+        - använd rätt grid property för att skapa mellanrum mellan boxarna
+        - alla boxar ska ta upp hela sidans bredd (exklusive padding och andra mellanrum)
+        - alla boxar ska vara kvadratiska
+        - den första boxen ska ta upp 2 kolumner och totalt sett vara dubbelt så stor som resten
+        - den andra boxen ska vara på linje med den första boxens nedre kant
+        - se bildexempelt i mappen för exakt layout --> */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +16,39 @@
 .container {
   padding: 2rem;
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .box {
   padding: 1rem;
   background-color: #cdf2d7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
 }
+
+.box:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+  /* aspect-ratio: auto; */
+}
+
+.box:nth-child(2) {
+  grid-column: 3;
+  grid-row: 2;
+}
+.box:nth-child(3) {
+  grid-column: 1;
+  grid-row: 3;
+}
+.box:nth-child(4) {
+  grid-column: 2;
+  grid-row: 3;
+}
+.box:nth-child(5) {
+  grid-column: 3;
+  grid-row: 3;
+}
+

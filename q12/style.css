@@ -1,3 +1,20 @@
 body {
   margin: 0;
+  padding: 20vh;
+  background-color: rgb(218, 129, 129);
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+h1 {
+  color: white;
+}
+.italic {
+  font-style: italic;
+}
+.white {
+  color: white;
 }
